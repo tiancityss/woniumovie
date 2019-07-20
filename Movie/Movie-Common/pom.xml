@@ -6,4 +6,17 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>Movie-Common</artifactId>
+  <dependencies>
+		<!-- lombok插件，不需要定义版本，父模块已经定义好了版本 -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+		  <!-- 引入fegin组件 -->  
+        <dependency>  
+          <groupId>org.springframework.cloud</groupId>  
+          <artifactId>spring-cloud-starter-openfeign</artifactId>  
+        </dependency>  
+		
+	</dependencies>
 </project>
