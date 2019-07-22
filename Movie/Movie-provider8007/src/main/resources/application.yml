@@ -1,0 +1,37 @@
+server:
+  port: 8007         #当前服务的端口号
+
+
+eureka:
+  client: #客户端注册进eureka服务列表内
+    service-url: 
+       defaultZone: http://movie9000.com:9000/eureka,
+       #defaultZone: http://localhost:9000/eureka
+  instance: 
+    instance-id: Movie-provider8007 # 配置注册中心显示出来的微服务名称
+    prefer-ip-address: true     #访问路径可以显示IP地址      
+
+
+spring:
+   application:
+    name: Movie-user  #当前服务的名字，后面会用到
+   datasource:
+    type: com.alibaba.druid.pool.DruidDataSource       # 当前数据源操作类型
+    driver-class-name: com.mysql.jdbc.Driver           # mysql驱动包
+    url: jdbc:mysql://localhost:3306/moviedb              # 数据库名称
+    username: root
+    password: 123456
+    dbcp2:
+      min-idle: 5                                      # 数据库连接池的最小维持连接数
+      initial-size: 5                                  # 初始化连接数
+      max-total: 5                                     # 最大连接数
+      max-wait-millis: 200                             # 等待连接获取的最大超时时间
+#mybatis映射        
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  type-aliases-package: com.woniuxy.movie.pojo
+info: #监控信息 
+  app.name: Movie
+  company.name: www.woniuxy.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$ 

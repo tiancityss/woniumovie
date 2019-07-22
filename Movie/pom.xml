@@ -96,5 +96,6 @@
 	<modules>
 		<module>Movie-Common</module>
 		<module>Movie-eureka-9000</module>
+		<module>Movie-provider8007</module>
 	</modules>
 </project>
